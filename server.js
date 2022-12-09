@@ -41,6 +41,41 @@ const server = http.createServer((req, res) => {
           responseJSON.id = "problem1.html"
         }
       }
+      if(bodyJSONid==="answer2") {
+        if(bodyJSONdata==="black") {
+          responseJSON.dialog = "correct!"
+          responseJSON.id = "problem3.html"
+        } else {          
+          responseJSON.dialog = "incorrect!"
+          responseJSON.id = "problem2.html"
+        }
+      }if(bodyJSONid==="answer3") {
+        if(bodyJSONdata==="orange") {
+          responseJSON.dialog = "correct!"
+          responseJSON.id = "problem4.html"
+        } else {          
+          responseJSON.dialog = "incorrect!"
+          responseJSON.id = "problem3.html"
+        }
+        if(bodyJSONid==="answer4") {
+          if(bodyJSONdata==="yellow") {
+            responseJSON.dialog = "correct!"
+            responseJSON.id = "problem5.html"
+          } else {          
+            responseJSON.dialog = "incorrect!"
+            responseJSON.id = "problem4.html"
+          }
+        }
+      }
+      if(bodyJSONid==="answer5") {
+        if(bodyJSONdata==="blue") {
+          responseJSON.dialog = "correct!"
+          responseJSON.id = "problem2.html"
+        } else {          
+          responseJSON.dialog = "incorrect!"
+          responseJSON.id = "problem1.html"
+        }
+      }
 
       /** Do not go beyond this section for now */
       res.end(JSON.stringify(responseJSON))
